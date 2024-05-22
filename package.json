@@ -24,5 +24,6 @@
   "bugs": {
     "url": "https://github.com/boneframework/native-components/issues"
   },
-  "homepage": "https://github.com/boneframework/native-components#readme"
+  "homepage": "https://github.com/boneframework/native-components#readme",
+  "publishConfig": {"access": "public"}
 }
