@@ -1,0 +1,28 @@
+{
+  "name": "@boneframework/native-components",
+  "version": "1.0.0",
+  "description": "Expo Components for Bone Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/boneframework/boneframework-native-components.git"
+  },
+  "keywords": [
+    "bone",
+    "framework",
+    "boneframework",
+    "expo",
+    "react",
+    "native",
+    "reactnative"
+  ],
+  "author": "Derek Stephen McLean",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boneframework/boneframework-native-components/issues"
+  },
+  "homepage": "https://github.com/boneframework/boneframework-native-components#readme"
+}
