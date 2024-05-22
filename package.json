@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/boneframework/boneframework-native-components.git"
+    "url": "https://github.com/boneframework/native-components.git"
   },
   "keywords": [
     "bone",
@@ -22,7 +22,7 @@
   "author": "Derek Stephen McLean",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/boneframework/boneframework-native-components/issues"
+    "url": "https://github.com/boneframework/native-components/issues"
   },
-  "homepage": "https://github.com/boneframework/boneframework-native-components#readme"
+  "homepage": "https://github.com/boneframework/native-components#readme"
 }
