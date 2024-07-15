@@ -1,4 +1,9 @@
 # @boneframework/native-components
-React Native expo components for BoneFramework
+React Native expo components for BoneFramework WIP
+## project level files referred to in code
+```
+@/config/settings
+@/config/cache
+```
 
 
