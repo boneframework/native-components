@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {Alert, Image, StyleSheet, TouchableWithoutFeedback, View} from "react-native";
 
-import colors from '../config/colors'
+import colors from '../../../../config/colors'
 import Icon from './Icon';
 import useCamera from '../hooks/useCamera';
 import usePhotos from '../hooks/usePhotos';

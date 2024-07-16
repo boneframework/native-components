@@ -1,8 +1,8 @@
 import React from 'react';
 import {Text as NativeText, StyleSheet} from "react-native";
 
-import defaultStyles from '../config/styles'
-import colors from "../config/colors";
+import defaultStyles from '../../../../config/styles'
+import colors from "../../../../config/colors";
 
 function Text({children, style, ...otherProps}) {
     return (

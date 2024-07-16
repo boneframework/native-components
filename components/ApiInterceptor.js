@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 
 import apiClient from "../api/client";
 import authStorage from "../auth/storage";
-import settings from "../config/settings";
+import settings from "../../../../config/settings";
 import useAuth from '../hooks/useAuth';
 
 // call to refresh an access token using our refresh token

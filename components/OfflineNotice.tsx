@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from "react-native";
 import {useNetInfo} from "@react-native-community/netinfo";
 
-import colors from "../config/colors";
+import colors from '../../../../config/colors';
 import Text from "./Text";
 
 function OfflineNotice(props) {

@@ -5,7 +5,7 @@ import storage from '../auth/storage';
 import * as Notifications from "expo-notifications";
 import useAuth from "../hooks/useAuth";
 import authStorage from "../auth/storage";
-import settings from '../config/api';
+import settings from '../../../../config/api';
 import AuthContext from "../auth/context";
 
 function Image({style, uri, onPress, handleError, source}) {
