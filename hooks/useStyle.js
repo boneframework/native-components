@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import * as Location from "expo-location";
 import {Platform, useColorScheme} from "react-native";
 
 import colors from "@/config/colors";
