@@ -3,11 +3,11 @@ import React, {useState} from 'react';
 import {Image, ImageBackground, Keyboard, StyleSheet, TouchableOpacity, View} from "react-native";
 import * as Yup from 'yup'
 
-import ActivityIndicator from "@/components/ActivityIndicator";
-import useApi from "@/hooks/useApi";
-import usersApi from '@/api/users';
+import ActivityIndicator from "../components/ActivityIndicator";
+import useApi from "../hooks/useApi";
+import usersApi from '../api/users';
 import {ErrorMessage, FormField, Form, SubmitButton} from '../components/forms'
-import Icon from "@/components/Icon";
+import Icon from "../components/Icon";
 
 const validationSchema = Yup.object().shape({
     email: Yup.string().required().email().label('Email'),
