@@ -5,5 +5,9 @@ React Native expo components for BoneFramework WIP
 @/config/settings
 @/config/cache
 ```
+## install these at root level:
+```
+expo-auth-session
+```
 
 
