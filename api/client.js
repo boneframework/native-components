@@ -1,8 +1,8 @@
 import {create} from 'apisauce';
 
 import cache from '../utilities/cache';
-import settings from '@/config/settings';
-import cacheSettings from '@/config/cache';
+import settings from '../../../../config/settings';
+import cacheSettings from '../../../../config/cache';
 
 const apiClient = create({
     baseURL: settings.apiUrl

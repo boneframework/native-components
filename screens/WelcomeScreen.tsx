@@ -3,13 +3,13 @@ import {Image, ImageBackground, StyleSheet, Text, View} from "react-native";
 import {exchangeCodeAsync, makeRedirectUri, useAuthRequest} from "expo-auth-session";
 
 import Button from '../components/Button'
-import colors from '@/config/colors'
+import colors from '../../../../config/colors'
 
 function WelcomeScreen({loginOnPress = () => {}, registerOnPress = () => {}, title = 'BONE FRAMEWORK'}) {
     return (
-        <ImageBackground blurRadius={10} style={styles.background} source={require('@/assets/background.png')} >
+        <ImageBackground blurRadius={10} style={styles.background} source={require('../../../../assets/background.png')} >
             <View style={styles.logoContainer}>
-                <Image style={styles.logo} source={require('@/assets/logo.png')} />
+                <Image style={styles.logo} source={require('../../../../assets/logo.png')} />
                 <Text style={styles.tagline}>{ title }</Text>
             </View>
             <View style={styles.buttonContainer}>

@@ -35,7 +35,7 @@ function ActivityIndicator({ visible = false , type="default"}) {
     return (
         <View style={style}>
             <Animation
-                source={require('../assets/animations/loader.json')}
+                source={require('../../../../assets/animations/loader.json')}
                 autoPlay={true}
                 loop={true}
                 style={{height: 100, width: 100, opacity: 1}}

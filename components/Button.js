@@ -2,8 +2,8 @@ import React from 'react';
 import {View, StyleSheet, Platform, TouchableOpacity, TouchableHighlight} from "react-native";
 
 import Text from '../components/Text'
-import colors from '../config/colors'
-import defaultStyles from '../config/styles'
+import colors from '../../../../config/colors'
+import defaultStyles from '../../../../config/styles'
 
 function Button({title, onPress, color, textColor}) {
     return (
