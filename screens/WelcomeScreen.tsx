@@ -2,7 +2,7 @@ import React from 'react';
 import {Image, ImageBackground, StyleSheet, Text, View} from "react-native";
 import {exchangeCodeAsync, makeRedirectUri, useAuthRequest} from "expo-auth-session";
 
-import Button from '@/components/Button'
+import Button from '../components/Button'
 import colors from '@/config/colors'
 
 function WelcomeScreen({loginOnPress = () => {}, registerOnPress = () => {}}) {
