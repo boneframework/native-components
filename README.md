@@ -4,6 +4,8 @@ React Native expo components for BoneFramework WIP
 ```
 @/config/settings
 @/config/cache
+@/assets/background.png
+@/assets/logo.png
 ```
 ## install these at root level:
 ```

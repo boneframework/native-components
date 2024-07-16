@@ -5,12 +5,12 @@ import {exchangeCodeAsync, makeRedirectUri, useAuthRequest} from "expo-auth-sess
 import Button from '../components/Button'
 import colors from '@/config/colors'
 
-function WelcomeScreen({loginOnPress = () => {}, registerOnPress = () => {}}) {
+function WelcomeScreen({loginOnPress = () => {}, registerOnPress = () => {}, title = 'BONE FRAMEWORK'}) {
     return (
         <ImageBackground blurRadius={10} style={styles.background} source={require('@/assets/background.png')} >
             <View style={styles.logoContainer}>
                 <Image style={styles.logo} source={require('@/assets/logo.png')} />
-                <Text style={styles.tagline}>BONE FRAMEWORK</Text>
+                <Text style={styles.tagline}>{ title }</Text>
             </View>
             <View style={styles.buttonContainer}>
                 <Button title="login" color="primary" onPress={loginOnPress} ></Button>
