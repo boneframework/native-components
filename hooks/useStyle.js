@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import {Platform, useColorScheme} from "react-native";
 
-import colors from "@/config/colors";
-import logger from "@/utility/logger";
+import colors from "../../../../config/colors";
+import logger from "../utilities/logger";
 
 export default useStyle = () => {
     const colorScheme = useColorScheme();

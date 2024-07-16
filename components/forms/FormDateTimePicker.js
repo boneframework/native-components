@@ -1,8 +1,9 @@
 import RNDateTimePicker from '@react-native-community/datetimepicker';
 import React from 'react';
-import {Field, useFormikContext} from "formik";
-import DateTimePicker from "../DateTimePicker";
 import {StyleSheet} from "react-native";
+import {Field, useFormikContext} from "formik";
+
+import DateTimePicker from "../DateTimePicker";
 import useStyle from "../../hooks/useStyle";
 
 function FormDateTimePicker ({...props}) {

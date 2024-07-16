@@ -39,12 +39,12 @@ function RegisterScreen({postRegisterUrl}) {
     return (
         <>
         <ActivityIndicator visible={registerApi.loading} type={'overlay'}/>
-        <ImageBackground blurRadius={10} style={styles.background} source={require('../../../../assets/background.png')} >
+        <ImageBackground blurRadius={10} style={styles.background} source={require.main.require('assets/background.png')} >
             <View style={styles.container}>
                 <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
                     <Icon size={75} name={'close'} />
                 </TouchableOpacity>
-                <Image style={styles.logo} source={require('../../../../assets/logo.png')} />
+                <Image style={styles.logo} source={require.main.require('assets/logo.png')} />
 
                 <Form
                     initialValues={{ email: ''}}
