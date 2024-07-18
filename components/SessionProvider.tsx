@@ -4,28 +4,23 @@ import AuthContext from "../contexts/auth";
 import useAuth from "../hooks/useAuth";
 
 function SessionProvider(props: object) {
-    const [user, setUser] = useState(null);
-    const auth = useAuth();
-    setUser(auth.user);
+    const {login, logout, updateUser, user, isLoading} = useAuth();
 
     return (
         <AuthContext.Provider
             value={{
                 signIn: async (authToken: string) => {
-                    auth.login(authToken);
-                    setUser(auth.user);
+                    login(authToken);
                 },
                 signOut: () => {
-                    auth.logout();
-                    setUser(null);
+                    logout();
                 },
+                update: data => updateUser(data),
                 user,
             }}>
             {props.children}
         </AuthContext.Provider>
     )
 }
-
-
 
 export default SessionProvider;
