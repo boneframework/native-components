@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 
 import apiClient from "../api/client";
-import authStorage from "../auth/storage";
+import authStorage from "../utilities/authStorage";
 import settings from "../../../../config/settings";
 import useAuth from '../hooks/useAuth';
 
