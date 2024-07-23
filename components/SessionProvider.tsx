@@ -1,22 +1,51 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
-import AuthContext from "../contexts/auth";
-import useAuth from "../hooks/useAuth";
+import AuthContext from "@boneframework/native-components/contexts/auth";
+import useAuth from "@boneframework/native-components/hooks/useAuth";
+import {useSecureStorageState} from "@boneframework/native-components/hooks/useSecureStorageState";
+import {useStorageState} from "@boneframework/native-components/hooks/useStorageState";
+import authStorage from "@boneframework/native-components/utilities/authStorage";
+import useApi from "@boneframework/native-components/hooks/useApi";
+import usersApi from "@boneframework/native-components/api/users";
 
 function SessionProvider(props: object) {
-    const {login, logout, updateUser, user, isLoading} = useAuth();
+    const profileApi = useApi(usersApi.getProfile);
+    const [[isAuthTokenLoading, authToken], setAuthToken] = useSecureStorageState('authToken');
+    const [[isUserLoading, user], setUser] = useStorageState('user');
+    const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+        setIsLoading(profileApi.loading || isAuthTokenLoading || isUserLoading);
+    }, [profileApi.loading || isAuthTokenLoading || isUserLoading]);
+
 
     return (
         <AuthContext.Provider
             value={{
-                signIn: async (authToken: string) => {
-                    login(authToken);
+                login: async (authToken: object) => {
+                    setIsLoading(true);
+                    await authStorage.storeAuthToken(authToken).then(async () => {
+                        const userProfile = await profileApi.request(authToken.accessToken);
+                        userProfile.data.authToken = authToken;
+                        setAuthToken(authToken)
+                        await setUser(userProfile.data);
+                        setIsLoading(false);
+                        console.log('token : ', authToken)
+                        console.log('user : ', user)
+                        console.log('profile : ', userProfile.data)
+                        console.log('user : ', user)
+
+                    });
                 },
-                signOut: () => {
-                    logout();
+                logout: () => {
+                    setAuthToken(null);
+                    setUser(null);
                 },
-                update: data => updateUser(data),
+                updateUser: async data => {
+                    setUser(data)
+                },
                 user,
+                isLoading
             }}>
             {props.children}
         </AuthContext.Provider>

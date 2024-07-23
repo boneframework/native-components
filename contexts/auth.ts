@@ -5,13 +5,13 @@ const AuthContext = createContext<{
     logout: () => void;
     updateUser: () => void;
     user?: object | null;
-    isLoading: boolean;
+    isLoading: bool;
 }>({
     login: () => null,
     logout: () => null,
     updateUser: () => null,
     user: null,
-    isLoading: false,
+    isLoading: true
 });
 
 export default AuthContext;

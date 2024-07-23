@@ -4,10 +4,12 @@ import {exchangeCodeAsync, makeRedirectUri, useAuthRequest} from "expo-auth-sess
 
 import Button from '../components/Button'
 import colors from '../../../../config/colors'
+import ActivityIndicator from "@boneframework/native-components/components/ActivityIndicator";
 
-function WelcomeScreen({loginOnPress = () => {}, registerOnPress = () => {}, title = 'BONE FRAMEWORK'}) {
+function WelcomeScreen({loginOnPress = () => {}, registerOnPress = () => {}, title = 'BONE FRAMEWORK', isLoading = false}) {
     return (
         <ImageBackground blurRadius={10} style={styles.background} source={require('../../../../assets/background.png')} >
+            <ActivityIndicator visible={isLoading} type={'overlay'}/>
             <View style={styles.logoContainer}>
                 <Image style={styles.logo} source={require('../../../../assets/logo.png')} />
                 <Text style={styles.tagline}>{ title }</Text>
