@@ -1,15 +1,11 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {Image as RNImage, StyleSheet, View} from "react-native";
 
-import storage from '../auth/storage';
-import * as Notifications from "expo-notifications";
 import useAuth from "../hooks/useAuth";
-import authStorage from "../auth/storage";
 import settings from '../../../../config/api';
-import AuthContext from "../auth/context";
 
 function Image({style, uri, onPress, handleError, source}) {
-    const {user, setUser} = useContext(AuthContext);
+    const {user} = useAuth();
 
     const tryAgain = async error => {
         if (handleError !== null) {
