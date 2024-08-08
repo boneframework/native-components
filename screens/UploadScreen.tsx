@@ -6,7 +6,7 @@ import colors from '../../../../config/colors'
 import Text from '../components/Text'
 import Animation from "../components/Animation";
 
-function UploadScreen({onDone, progress = 0, visible = false}) {
+function UploadScreen({onDone, progress = 0, visible = false, animationSource = '../../../../assets/animations/done.json'}) {
     return (
         <Modal visible={visible}>
             <View style={styles.container}>
@@ -16,7 +16,7 @@ function UploadScreen({onDone, progress = 0, visible = false}) {
                         autoPlay={true}
                         loop={false}
                         onAnimationFinish={onDone}
-                        source={require('../assets/animations/done.json')}
+                        source={require(animationSource)}
                         style={styles.animation}
                     />
                 }
