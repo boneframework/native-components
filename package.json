@@ -1,6 +1,6 @@
 {
   "name": "@boneframework/native-components",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "Expo Components for Bone Framework",
   "main": "src/Bone.ts",
   "scripts": {
@@ -46,6 +46,7 @@
     "lottie-react-native": "^6.7.2",
     "react": "18.2.0",
     "react-native-progress": "^5.0.1",
-    "yup": "^1.4.0"
+    "yup": "^1.4.0",
+    "expo-location": "~17.0.1"
   }
 }
