@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
 import AuthContext from "@boneframework/native-components/contexts/auth";
-import useAuth from "@boneframework/native-components/hooks/useAuth";
 import {useSecureStorageState} from "@boneframework/native-components/hooks/useSecureStorageState";
 import {useStorageState} from "@boneframework/native-components/hooks/useStorageState";
 import authStorage from "@boneframework/native-components/utilities/authStorage";
@@ -16,7 +15,7 @@ function SessionProvider(props: object) {
 
     useEffect(() => {
         setIsLoading(profileApi.loading || isAuthTokenLoading || isUserLoading);
-    }, [profileApi.loading || isAuthTokenLoading || isUserLoading]);
+    }, [profileApi.loading, isAuthTokenLoading, isUserLoading]);
 
 
     return (
@@ -30,11 +29,6 @@ function SessionProvider(props: object) {
                         setAuthToken(authToken)
                         await setUser(userProfile.data);
                         setIsLoading(false);
-                        console.log('token : ', authToken)
-                        console.log('user : ', user)
-                        console.log('profile : ', userProfile.data)
-                        console.log('user : ', user)
-
                     });
                 },
                 logout: () => {

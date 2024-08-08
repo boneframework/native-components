@@ -1,10 +1,10 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {Image as RNImage, StyleSheet, View} from "react-native";
+import {StyleSheet, View} from "react-native";
+import {Image as ExpoImage} from "expo-image";
 
 import useAuth from "../hooks/useAuth";
 import settings from '../../../../config/api';
 
-function Image({style, uri, onPress, handleError, source}) {
+function Image({style, uri, onPress, handleError, source, ...rest}) {
     const {user} = useAuth();
 
     const tryAgain = async error => {
@@ -39,11 +39,12 @@ function Image({style, uri, onPress, handleError, source}) {
 
     if ((null !== user.authToken.accessToken && protectedUri == true) || protectedUri == false) {
         return (
-            <RNImage
+            <ExpoImage
                 source={imageSource}
                 style={style}
                 onError={tryAgain}
-            ></RNImage>
+                {...rest}
+            ></ExpoImage>
         );
     }
 }

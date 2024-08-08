@@ -1,8 +1,6 @@
 // import Bugsnag from '@bugsnag/expo';
 // or sentry, whatever
 
-import {object} from "prop-types";
-
 const log = (message: any) => {
     console.log(message);
     // Bugsnag.notify(error);

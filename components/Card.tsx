@@ -1,14 +1,13 @@
 import React from 'react';
 import {StyleSheet, TouchableWithoutFeedback, View} from "react-native";
-import {Image} from 'react-native-expo-image-cache';
+import Image from './Image';
 
 import Text from './Text'
 import colors from '../../../../config/colors'
 import useStyle from "../hooks/useStyle";
 
-function Card({title, subtitle, imageUrl, onPress, thumbnaiilUrl}) {
+function Card({title, subtitle, imageUrl, onPress, thumbnailUrl}) {
     const style = useStyle();
-
     const styles = StyleSheet.create({
         card: {
             borderRadius: 15,
@@ -37,7 +36,7 @@ function Card({title, subtitle, imageUrl, onPress, thumbnaiilUrl}) {
                 <Image
                     style={styles.image}
                     uri={imageUrl}
-                    preview={{uri: thumbnaiilUrl}}
+                    preview={{uri: thumbnailUrl}}
                     tint={'light'}
                 />
                 <View style={styles.detailsContainer}>

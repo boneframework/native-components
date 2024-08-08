@@ -5,7 +5,7 @@ const AuthContext = createContext<{
     logout: () => void;
     updateUser: () => void;
     user?: object | null;
-    isLoading: bool;
+    isLoading: boolean;
 }>({
     login: () => null,
     logout: () => null,

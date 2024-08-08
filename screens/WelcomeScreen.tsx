@@ -1,10 +1,10 @@
+import ActivityIndicator from "@boneframework/native-components/components/ActivityIndicator";
+import {exchangeCodeAsync, makeRedirectUri, useAuthRequest} from "expo-auth-session";
 import React from 'react';
 import {Image, ImageBackground, StyleSheet, Text, View} from "react-native";
-import {exchangeCodeAsync, makeRedirectUri, useAuthRequest} from "expo-auth-session";
 
 import Button from '../components/Button'
 import colors from '../../../../config/colors'
-import ActivityIndicator from "@boneframework/native-components/components/ActivityIndicator";
 
 function WelcomeScreen({loginOnPress = () => {}, registerOnPress = () => {}, title = 'BONE FRAMEWORK', isLoading = false}) {
     return (

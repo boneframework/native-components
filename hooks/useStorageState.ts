@@ -40,9 +40,9 @@ export async function setStorageItemAsync(key: string, value: object | string | 
 }
 
 export function useStorageState(key: string): UseStateHook<string> {
-    const isJson = () => {
+    const isJson = value => {
         try {
-            const result = JSON.parse(str);
+            const result = JSON.parse(value);
             const type = Object.prototype.toString.call(result);
             return type === '[object Object]'
                 || type === '[object Array]';
@@ -58,7 +58,7 @@ export function useStorageState(key: string): UseStateHook<string> {
         if (Platform.OS === 'web') {
             try {
                 if (typeof localStorage !== 'undefined') {
-                    value = localStorage.getItem(key);
+                    let value = localStorage.getItem(key);
 
                     if (isJson(value)) {
                         value = JSON.parse(value);
