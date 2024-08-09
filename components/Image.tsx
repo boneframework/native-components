@@ -4,16 +4,12 @@ import {Image as ExpoImage} from "expo-image";
 import useAuth from "../hooks/useAuth";
 import settings from '../../../../config/api';
 
-function Image({style, uri, onPress, handleError, source, ...rest}) {
+function Image({style, uri, onPress, handleError = error => console.error, source, ...rest}) {
     const {user} = useAuth();
 
     const tryAgain = async error => {
-        if (handleError !== null) {
-            handleError();
-        }
-        setTimeout(() => {
-
-        }, 1000);
+        handleError();
+        setTimeout(() => {}, 1000);
     };
     let imageSource;
     let protectedUri = false;
@@ -48,10 +44,6 @@ function Image({style, uri, onPress, handleError, source, ...rest}) {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {}
-})
 
 export default Image;
 
