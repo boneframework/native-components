@@ -39,14 +39,15 @@
     "expo-device": "^6.0.2",
     "expo-image": "^1.12.13",
     "expo-image-picker": "^15.0.7",
+    "expo-location": "~17.0.1",
     "expo-notifications": "^0.28.11",
     "expo-secure-store": "^13.0.2",
     "formik": "^2.4.6",
     "jwt-decode": "^4.0.0",
     "lottie-react-native": "^6.7.2",
     "react": "18.2.0",
+    "react-native-maps": "^1.17.3",
     "react-native-progress": "^5.0.1",
-    "yup": "^1.4.0",
-    "expo-location": "~17.0.1"
+    "yup": "^1.4.0"
   }
 }
