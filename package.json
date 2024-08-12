@@ -1,6 +1,6 @@
 {
   "name": "@boneframework/native-components",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "description": "Expo Components for Bone Framework",
   "main": "src/Bone.ts",
   "scripts": {
@@ -48,6 +48,7 @@
     "react": "18.2.0",
     "react-native-maps": "^1.17.3",
     "react-native-progress": "^5.0.1",
+    "toggle-switch-react-native": "^3.3.0",
     "yup": "^1.4.0"
   }
 }
