@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Keyboard, StyleSheet, View} from "react-native";
+import {StyleSheet, View} from "react-native";
 import * as Yup from "yup";
 
 import {ErrorMessage, Form, FormField, SubmitButton} from "../components/forms";
