@@ -4,7 +4,7 @@ import {View, StyleSheet} from "react-native";
 import Animation from "./Animation";
 import useStyle from "../hooks/useStyle";
 
-function ActivityIndicator({ visible = false , type="default", animationPath = '../../../../assets/animations/loader.json'}) {
+function ActivityIndicator({ visible = false , type="default", animationSource}) {
     const defaultStyles = useStyle();
 
     const styles = StyleSheet.create({
@@ -35,7 +35,7 @@ function ActivityIndicator({ visible = false , type="default", animationPath = '
     return (
         <View style={style}>
             <Animation
-                source={require(animationPath)}
+                source={animationSource}
                 autoPlay={true}
                 loop={true}
                 style={{height: 100, width: 100, opacity: 1}}
