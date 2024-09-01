@@ -9,7 +9,7 @@ import colors from '../../../../config/colors'
 function WelcomeScreen({loginOnPress = () => {}, registerOnPress = () => {}, title = 'BONE FRAMEWORK', isLoading = false}) {
     return (
         <ImageBackground blurRadius={10} style={styles.background} source={require('../../../../assets/background.png')} >
-            <ActivityIndicator visible={isLoading} type={'overlay'}/>
+            <ActivityIndicator visible={isLoading} type={'overlay'} />
             <View style={styles.logoContainer}>
                 <Image style={styles.logo} source={require('../../../../assets/logo.png')} />
                 <Text style={styles.tagline}>{ title }</Text>

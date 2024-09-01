@@ -7,6 +7,10 @@ import useStyle from "../hooks/useStyle";
 function ActivityIndicator({ visible = false , type="default", animationSource}) {
     const defaultStyles = useStyle();
 
+    if (!animationSource) {
+        animationSource = '../../../../assets/animations/loader.json'
+    }
+
     const styles = StyleSheet.create({
         overlay: {
             flex:1,

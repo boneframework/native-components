@@ -1,6 +1,6 @@
 import * as Linking from "expo-linking";
 import {useEffect} from "react";
-import router from 'ex';
+import {router} from 'expo-router';
 
 import routes from '../../../../config/routes';
 
@@ -13,7 +13,7 @@ export default useLinking = () => {
             if (parts.path !== null && parts.path !== '') {
                 switch (parts.path) {
                     case routes.USER_ACTIVATION:
-                        router.navigate(routes.USER_ACTIVATION, parts.queryParams);
+                        router.navigate({pathname: routes.USER_ACTIVATION, params: parts.queryParams});
                         break;
                 }
             }
