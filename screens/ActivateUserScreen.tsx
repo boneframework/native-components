@@ -1,41 +1,39 @@
-import {Image, ImageBackground, Keyboard, StyleSheet, View} from "react-native";
-import * as Linking from 'expo-linking';
+import {ImageBackground, Keyboard, StyleSheet, View} from "react-native";
+import {router, useGlobalSearchParams} from 'expo-router';
 import React, {useEffect, useState} from "react";
-import * as Yup from 'yup'
 
-import Button from '../components/Button';
-import CheckEmailScreen from '../screens/CheckEmailScreen';
-import Text from '../components/Text';
 import ActivityIndicator from "../components/ActivityIndicator";
-import Animation from "../components/Animation";
 import {ErrorMessage, Form, FormField, SubmitButton} from "../components/forms";
 import ResendActivationScreen from "../screens/ResendActivationlScreen";
 import SetPasswordScreen from "../screens/SetPasswordScreen";
 import useApi from "../hooks/useApi";
 import useAuth from "../hooks/useAuth";
-import useLinking from "../hooks/useLinking";
 import userApi from "../api/users";
 
 import settings from "../../../../config/settings";
 import routes from "../../../../config/routes";
-import colors from '../../../../config/colors';
 
-function ActivateUserScreen({navigation, route}) {
+function ActivateUserScreen() {
+    const STATUS_BEGIN = 'start_validating';
     const STATUS_VALIDATE = 'validate_email_token';
     const STATUS_RESEND = 'resend_email_token';
     const STATUS_SET_PASSWORD = 'set_password';
+
     const activationApi = useApi(userApi.activateAccount);
     const resendActivationApi = useApi(userApi.resendactivationEmail);
     const validateEmailTokenApi = useApi(userApi.validateEmailToken);
-    const [status, setStatus] = useState(STATUS_VALIDATE);
+
+    const [status, setStatus] = useState(STATUS_BEGIN);
     const [error, setError] = useState();
     const [tokenError, setTokenError] = useState();
+
     const {login} = useAuth();
-    const url = Linking.useURL();
-    const email = route.params.email;
-    const token = route.params.token;
+    const params = useGlobalSearchParams();
+    const email = params.email;
+    const token = params.token;
 
     const validateEmailToken = async () => {
+        setStatus(STATUS_VALIDATE);
         const result = await validateEmailTokenApi.request(email, token);
 
         if (result.data.ok) {
@@ -50,6 +48,15 @@ function ActivateUserScreen({navigation, route}) {
                     setStatus(STATUS_RESEND);
                     break;
             }
+        }
+    }
+
+    const convertResponse = (data) => {
+        return {
+            accessToken: data.access_token,
+            expiresIn: data.expires_in,
+            refreshToken: data.refresh_token,
+            tokenType: data.token_type,
         }
     }
 
@@ -76,7 +83,7 @@ function ActivateUserScreen({navigation, route}) {
                 return;
             }
 
-            login({accessToken: result.data.access_token, refreshToken: result.data.refresh_token});
+            login(convertResponse(result.data)).then(router.navigate(routes.HOME));
         } catch (error) {
             setError(error);
             console.error(error);
@@ -94,7 +101,7 @@ function ActivateUserScreen({navigation, route}) {
     }
 
     useEffect(() => {
-        if (status === STATUS_VALIDATE) {
+        if (status === STATUS_BEGIN) {
             validateEmailToken();
         }
     });

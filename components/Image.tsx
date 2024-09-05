@@ -33,7 +33,7 @@ function Image({style, uri, onPress, handleError = error => console.error, sourc
         imageSource = source;
     }
 
-    if ((null !== user.authToken.accessToken && protectedUri == true) || protectedUri == false) {
+    if ((null !== user?.authToken?.accessToken && protectedUri == true) || protectedUri == false) {
         return (
             <ExpoImage
                 source={imageSource}
