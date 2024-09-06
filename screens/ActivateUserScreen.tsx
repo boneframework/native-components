@@ -95,8 +95,8 @@ function ActivateUserScreen() {
         resendActivationApi
             .request(email)
             .then(setStatus(STATUS_VALIDATE))
-            .then(navigation.goBack())
-            .then(navigation.navigate(routes.USER_ACTIVATION_CHECK_EMAIL))
+            .then(router.back())
+            .then(router.navigate(routes.USER_ACTIVATION_CHECK_EMAIL))
             .catch(console.error);
     }
 

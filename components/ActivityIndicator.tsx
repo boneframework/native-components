@@ -8,7 +8,7 @@ function ActivityIndicator({ visible = false , type="default", animationSource})
     const defaultStyles = useStyle();
 
     if (!animationSource) {
-        animationSource = '../../../../assets/animations/loader.json'
+        animationSource = require('../../../../assets/animations/loader.json');
     }
 
     const styles = StyleSheet.create({
