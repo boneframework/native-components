@@ -1,11 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, View} from "react-native";
 import * as Yup from "yup";
 
 import {ErrorMessage, Form, FormField, SubmitButton} from "../components/forms";
 import Image from "../components/Image";
-
-import settings from "../../../../config/settings";
 
 const validationSchema = Yup.object().shape({
     password: Yup.string().required().min(4).label('Password'),

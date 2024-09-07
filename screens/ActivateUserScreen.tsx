@@ -10,10 +10,7 @@ import useApi from "../hooks/useApi";
 import useAuth from "../hooks/useAuth";
 import userApi from "../api/users";
 
-import settings from "../../../../config/settings";
-import routes from "../../../../config/routes";
-
-function ActivateUserScreen() {
+function ActivateUserScreen({settings, loginRedirect}) {
     const STATUS_BEGIN = 'start_validating';
     const STATUS_VALIDATE = 'validate_email_token';
     const STATUS_RESEND = 'resend_email_token';
@@ -83,7 +80,7 @@ function ActivateUserScreen() {
                 return;
             }
 
-            login(convertResponse(result.data)).then(router.navigate(routes.HOME));
+            login(convertResponse(result.data)).then(router.navigate(loginRedirect));
         } catch (error) {
             setError(error);
             console.error(error);

@@ -1,6 +1,6 @@
 {
   "name": "@boneframework/native-components",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "description": "Expo Components for Bone Framework",
   "main": "src/Bone.ts",
   "scripts": {

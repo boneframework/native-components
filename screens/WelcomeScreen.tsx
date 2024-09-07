@@ -3,8 +3,9 @@ import {exchangeCodeAsync, makeRedirectUri, useAuthRequest} from "expo-auth-sess
 import React from 'react';
 import {Image, ImageBackground, StyleSheet, Text, View} from "react-native";
 
-import Button from '../components/Button'
-import colors from '../../../../config/colors'
+import Button from '../components/Button';
+
+import colors from '../../../../config/colors';
 
 function WelcomeScreen({loginOnPress = () => {}, registerOnPress = () => {}, title = 'BONE FRAMEWORK', isLoading = false}) {
     return (

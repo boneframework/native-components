@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {
     Alert,
-    Button,
     KeyboardAvoidingView,
     Platform,
     ScrollView,
@@ -9,26 +8,20 @@ import {
     TouchableWithoutFeedback,
     View
 } from "react-native"
-import {Field} from "formik";
-import * as FileSystem from 'expo-file-system';
-import {useAsyncStorage} from "@react-native-async-storage/async-storage";
 import * as Yup from "yup";
 
-import colors from '../../../../config/colors';
-import ImageInput from '../components/ImageInput';
 import Image from '../components/Image';
-import Screen from '../components/Screen';
-import Text from '../components/Text';
 import {Form, FormDateTimePicker, FormField, SubmitButton} from "../components/forms";
 import ActivityIndicator from "../components/ActivityIndicator";
 import UploadScreen from "./UploadScreen";
 import useApi from "../hooks/useApi";
 import userApi from "../api/users";
 import useAuth from "../hooks/useAuth";
-import useCache from "../hooks/useCache";
 import useCamera from "../hooks/useCamera";
 import usePhotos from "../hooks/usePhotos";
 import useStyle from "../hooks/useStyle";
+
+import colors from '../../../../config/colors';
 
 const validationSchema = Yup.object().shape({
     firstname: Yup.string().required().min(2).max(60).label('First name'),
