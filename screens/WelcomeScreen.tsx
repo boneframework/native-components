@@ -7,7 +7,43 @@ import Button from '../components/Button';
 
 import colors from '../../../../config/colors';
 
-function WelcomeScreen({loginOnPress = () => {}, registerOnPress = () => {}, title = 'BONE FRAMEWORK', isLoading = false}) {
+function WelcomeScreen({
+    loginOnPress = () => {},
+    registerOnPress = () => {},
+    title = 'BONE FRAMEWORK',
+    isLoading = false,
+    logoTopMargin = 70,
+    logoWidth = 150,
+    logoHeight = 105
+}) {
+    const styles = StyleSheet.create({
+        background: {
+            flex: 1,
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+        },
+        logo: {
+            width: logoWidth,
+            height: logoHeight
+        },
+        logoContainer: {
+            position: 'absolute',
+            top: logoTopMargin,
+            alignItems: "center"
+        },
+        buttonContainer: {
+            width: "100%",
+            padding: 20
+        },
+        tagline: {
+            fontSize: 50,
+            fontWeight: 'bold',
+            paddingTop: 10,
+            color: colors.white,
+            textAlign: 'center'
+        },
+    });
+
     return (
         <ImageBackground blurRadius={10} style={styles.background} source={require('../../../../assets/background.png')} >
             <ActivityIndicator visible={isLoading} type={'overlay'} />
@@ -22,32 +58,6 @@ function WelcomeScreen({loginOnPress = () => {}, registerOnPress = () => {}, tit
         </ImageBackground>
     );
 }
-const styles = StyleSheet.create({
-    background: {
-        flex: 1,
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-    },
-    logo: {
-        width: 150,
-        height: 105
-    },
-    logoContainer: {
-        position: 'absolute',
-        top: 70,
-        alignItems: "center"
-    },
-    buttonContainer: {
-        width: "100%",
-        padding: 20
-    },
-    tagline: {
-        fontSize: 50,
-        fontWeight: 'bold',
-        paddingTop: 10,
-        color: colors.white,
-        textAlign: 'center'
-    },
-});
+
 
 export default WelcomeScreen;

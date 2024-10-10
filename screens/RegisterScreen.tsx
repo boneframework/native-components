@@ -42,7 +42,7 @@ function RegisterScreen({postRegisterUrl}) {
         <ImageBackground blurRadius={10} style={styles.background} source={require('../../../../assets/background.png')} >
             <View style={styles.container}>
                 <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
-                    <Icon size={75} name={'close'} />
+                    <Icon size={75} name={'chevron-left'} />
                 </TouchableOpacity>
                 <Image style={styles.logo} source={require('../../../../assets/logo.png')} />
 
@@ -81,6 +81,10 @@ const styles = StyleSheet.create({
     },
     background: {
         height: '100%'
+    },
+    cancelButton: {
+        top:10,
+        left:-20
     }
 })
 
