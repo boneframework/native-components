@@ -1,15 +1,16 @@
-import {ImageBackground, StyleSheet, View} from "react-native";
+import {StyleSheet, View} from "react-native";
 import React from "react";
 
-import Text from '../components/Text';
 import Animation from "../components/Animation";
+import Background from "../components/Background";
+import Text from '../components/Text';
 
 import colors from "../../../../config/colors";
 
-function CheckEmailScreen(props) {
+function CheckEmailScreen({backgroundSource = null}) {
 
     return (
-        <ImageBackground blurRadius={10} style={styles.container} source={require('../../../../assets/background.png')} >
+        <Background blurRadius={10} style={styles.container} imageSource={backgroundSource} gradientColors={colors.bgGradient} >
             <View style={styles.animationContainer}>
                 <Animation
                     autoPlay={true}
@@ -21,7 +22,7 @@ function CheckEmailScreen(props) {
                 <Text style={styles.activate}>Activate your account</Text>
                 <Text style={styles.info}>Check your email and click on the link to open the app and activate your account.</Text>
             </View>
-        </ImageBackground>
+        </Background>
     );
 }
 

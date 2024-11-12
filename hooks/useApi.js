@@ -8,9 +8,20 @@ export default useApi = (apiFunc) => {
 
     const request = async (...args) => {
         setLoading(true);
-        const response = await apiFunc(...args);
+        const response = await apiFunc(...args)
+            .then(result => {
+                setError(!result.ok);
+
+                return result;
+            }, reason => {
+                setError(true);
+
+                return {headers: [], data: reason};
+            })
+            .catch(() => {
+                setError(true);
+            });
         setLoading(false);
-        setError(!response.ok);
         setHeaders(response.headers);
         setData(response.data);
         return response;

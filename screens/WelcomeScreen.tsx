@@ -1,8 +1,9 @@
-import ActivityIndicator from "@boneframework/native-components/components/ActivityIndicator";
 import {exchangeCodeAsync, makeRedirectUri, useAuthRequest} from "expo-auth-session";
 import React from 'react';
-import {Image, ImageBackground, StyleSheet, Text, View} from "react-native";
+import {Image, StyleSheet, Text, View} from "react-native";
 
+import ActivityIndicator from "../components/ActivityIndicator";
+import Background from '../components/Background';
 import Button from '../components/Button';
 
 import colors from '../../../../config/colors';
@@ -14,7 +15,8 @@ function WelcomeScreen({
     isLoading = false,
     logoTopMargin = 70,
     logoWidth = 150,
-    logoHeight = 105
+    logoHeight = 105,
+    backgroundSource = null
 }) {
     const styles = StyleSheet.create({
         background: {
@@ -45,7 +47,7 @@ function WelcomeScreen({
     });
 
     return (
-        <ImageBackground blurRadius={10} style={styles.background} source={require('../../../../assets/background.png')} >
+        <Background imageSource={backgroundSource} blurRadius={10} style={styles.background} gradientColors={colors.bgGradient}>
             <ActivityIndicator visible={isLoading} type={'overlay'} />
             <View style={styles.logoContainer}>
                 <Image style={styles.logo} source={require('../../../../assets/logo.png')} />
@@ -55,7 +57,7 @@ function WelcomeScreen({
                 <Button title="login" color="primary" onPress={loginOnPress} ></Button>
                 <Button title="register" color="secondary" onPress={registerOnPress}></Button>
             </View>
-        </ImageBackground>
+        </Background>
     );
 }
 

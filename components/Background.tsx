@@ -2,18 +2,18 @@ import React from 'react';
 import { ImageBackground } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 
-function Background({children, imagePath =  null, gradientColors  = null, ...rest}) {
-    if (imagePath === null && gradientColors === null) {
+function Background({children, imageSource =  null, gradientColors  = null, blurRadius= 10, ...rest}) {
+    if (imageSource === null && gradientColors === null) {
         return;
     }
 
-    if (imagePath !== null) {
-        return <ImageBackground source={require(imagePath)} {...rest}>
+    if (imageSource !== null) {
+        return <ImageBackground source={imageSource} blurRadius={blurRadius} {...rest}>
             { children }
         </ImageBackground>
     }
 
-    return <LinearGradient colors={gradientColors}>
+    return <LinearGradient colors={gradientColors} {...rest}>
         { children }
     </LinearGradient>
 }

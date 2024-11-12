@@ -3,14 +3,17 @@ import {router, useGlobalSearchParams} from 'expo-router';
 import React, {useEffect, useState} from "react";
 
 import ActivityIndicator from "../components/ActivityIndicator";
+import Background from "../components/Background";
 import {ErrorMessage, Form, FormField, SubmitButton} from "../components/forms";
 import ResendActivationScreen from "../screens/ResendActivationlScreen";
 import SetPasswordScreen from "../screens/SetPasswordScreen";
 import useApi from "../hooks/useApi";
 import useAuth from "../hooks/useAuth";
-import userApi from "../api/users";
 
-function ActivateUserScreen({settings, loginRedirect, resendActivationEmailRedirect}) {
+import userApi from "../api/users";
+import colors from '../../../../config/colors';
+
+function ActivateUserScreen({settings, loginRedirect, resendActivationEmailRedirect, backgroundSource = null}) {
     const STATUS_BEGIN = 'start_validating';
     const STATUS_VALIDATE = 'validate_email_token';
     const STATUS_RESEND = 'resend_email_token';
@@ -106,10 +109,10 @@ function ActivateUserScreen({settings, loginRedirect, resendActivationEmailRedir
     return (
         <>
             <ActivityIndicator visible={activationApi.loading || resendActivationApi.loading || validateEmailTokenApi.loading} type={'overlay'}/>
-            <ImageBackground blurRadius={10} style={styles.container} source={require('../../../../assets/background.png')} >
+            <Background blurRadius={10} style={styles.container} imageSource={backgroundSource} gradientColors={colors.bgGradient} >
                 { (status === STATUS_SET_PASSWORD || status === STATUS_VALIDATE)  && <SetPasswordScreen submitCallback={handleSubmit} error={error}/> }
                 { status === STATUS_RESEND && <ResendActivationScreen email={email} tokenError={tokenError} submitCallback={resendActivationEmail}/> }
-            </ImageBackground>
+            </Background>
         </>
     );
 }

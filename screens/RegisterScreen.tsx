@@ -4,16 +4,19 @@ import {Image, ImageBackground, Keyboard, StyleSheet, TouchableOpacity, View} fr
 import * as Yup from 'yup'
 
 import ActivityIndicator from "../components/ActivityIndicator";
+import Background from "../components/Background";
 import useApi from "../hooks/useApi";
 import usersApi from '../api/users';
 import {ErrorMessage, FormField, Form, SubmitButton} from '../components/forms'
 import Icon from "../components/Icon";
 
+import colors from "../../../../config/colors";
+
 const validationSchema = Yup.object().shape({
     email: Yup.string().required().email().label('Email'),
 });
 
-function RegisterScreen({postRegisterUrl}) {
+function RegisterScreen({postRegisterUrl, backgroundSource = null}) {
     const registerApi = useApi(usersApi.register);
     const [error, setError] = useState();
     const onClose = () => router.back();
@@ -39,7 +42,7 @@ function RegisterScreen({postRegisterUrl}) {
     return (
         <>
         <ActivityIndicator visible={registerApi.loading} type={'overlay'}/>
-        <ImageBackground blurRadius={10} style={styles.background} source={require('../../../../assets/background.png')} >
+        <Background imageSource={backgroundSource} blurRadius={10} style={styles.background} gradientColors={colors.bgGradient} >
             <View style={styles.container}>
                 <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
                     <Icon size={75} name={'chevron-left'} />
@@ -63,7 +66,7 @@ function RegisterScreen({postRegisterUrl}) {
                     <SubmitButton color="primary" title="Register" />
                 </Form>
             </View>
-        </ImageBackground>
+        </Background>
         </>
     );
 }

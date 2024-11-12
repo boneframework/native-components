@@ -35,7 +35,7 @@ function ListItemSwipable({title, subtitle, image, IconComponent, onPress, rende
         },
         title: {
             color: style.text.color,
-            fontWeight: "500"
+            fontSize: 14
         },
         subtitle: {
             color: colors.medium
