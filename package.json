@@ -33,6 +33,7 @@
     "@react-native-community/datetimepicker": "^8.2.0",
     "@react-native-community/netinfo": "^11.3.2",
     "apisauce": "^3.0.1",
+    "dayjs": "^1.11.13",
     "expo-auth-session": "^5.5.2",
     "expo-camera": "^15.0.13",
     "expo-constants": "^16.0",
