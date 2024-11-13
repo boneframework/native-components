@@ -8,7 +8,7 @@ import colors from '../../../../config/colors'
 import {MaterialCommunityIcons} from "@expo/vector-icons";
 import useStyle from "../hooks/useStyle";
 
-function ListItemSwipable({title, subtitle, image, IconComponent, onPress, renderRightActions, displayCheverons}) {
+function ListItemSwipable({title, subtitle, image, IconComponent, onPress, renderRightActions, displayCheverons, titleStyle, subtitleStyle}) {
     const style = useStyle();
 
     if (!title && subtitle) {
@@ -35,10 +35,11 @@ function ListItemSwipable({title, subtitle, image, IconComponent, onPress, rende
         },
         title: {
             color: style.text.color,
-            fontSize: 14
+            ...titleStyle
         },
         subtitle: {
-            color: colors.medium
+            color: colors.medium,
+            ...subtitleStyle
         }
     });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground } from "react-native";
+import { ImageBackground } from "expo-image";
 import { LinearGradient } from 'expo-linear-gradient';
 
 function Background({children, imageSource =  null, gradientColors  = null, blurRadius= 10, ...rest}) {
