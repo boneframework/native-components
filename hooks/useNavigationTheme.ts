@@ -1,7 +1,6 @@
-import {DarkTheme, DefaultTheme} from "@react-navigation/native";
+import { DarkTheme, DefaultTheme } from "@react-navigation/native";
 
-import useStyle from "./useStyle";
-import colors from "../../../../config/colors";
+import useStyle from "@boneframework/native-components/hooks/useStyle";
 
 const useNavigationTheme = () => {
     const style = useStyle();
@@ -18,4 +17,4 @@ const useNavigationTheme = () => {
     }
 };
 
-export default useNavigationTheme;
+export default useNavigationTheme

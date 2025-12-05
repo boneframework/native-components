@@ -1,10 +1,16 @@
-import React, {useEffect, useRef} from 'react';
-import {View, StyleSheet} from "react-native";
+import React from 'react';
+import { StyleSheet, View } from "react-native";
 
+import useStyle from "@boneframework/native-components/hooks/useStyle";
 import Animation from "./Animation";
-import useStyle from "../hooks/useStyle";
 
-function ActivityIndicator({ visible = false , type="default", animationSource}) {
+interface ActivityIndicatorProps {
+    visible?: boolean;
+    type?: 'default' | 'overlay';
+    animationSource: string | undefined;
+}
+
+function ActivityIndicator({ visible = false , type ="default", animationSource}: ActivityIndicatorProps) {
     const defaultStyles = useStyle();
 
     if (!animationSource) {

@@ -1,8 +1,7 @@
-import {useEffect, useState} from "react";
-import {Platform, useColorScheme} from "react-native";
+import { useState } from "react";
+import { Platform, useColorScheme } from "react-native";
 
 import colors from "../../../../config/colors";
-import logger from "../utilities/logger";
 
 const useStyle = () => {
     const colorScheme = useColorScheme();
@@ -23,22 +22,27 @@ const useStyle = () => {
                 },
             })
         },
-        box: {},
-        errorText: {},
-        flipswitch: {},
-        navButton: {},
-        formInput: {},
+        box: {
+            backgroundColor: dark ? colors.darkish : colors.white
+        },
+        errorText: {
+            color: dark ? colors.secondary : colors.primary
+        },
+        flipswitch: {
+            onColor: dark ? colors.secondary : colors.secondary,
+            offColor: dark ? colors.darkish : colors.white
+        },
+        navButton: {
+            color: dark ? colors.light : colors.white
+        },
+        formInput: {
+            backgroundColor: dark ? colors.darkish : colors.white,
+            text: dark ? colors.light : colors.dark,
+            placeholderTextColor: dark ? colors.medium : colors.medium
+        },
         backgroundColor: dark ? colors.dark : colors.light,
         colors: colors
     };
-
-    style.box.backgroundColor = dark ? style.colors.darkish : style.colors.white;
-    style.flipswitch.onColor = dark ? style.colors.secondary : style.colors.secondary;
-    style.flipswitch.offColor = dark ? style.colors.darkish : style.colors.medium;
-    style.formInput.backgroundColor = dark ? style.colors.darkish : style.colors.white;
-    style.formInput.text = dark ? style.colors.medium : style.colors.dark;
-    style.errorText.color = dark ? style.colors.secondary : style.colors.primary;
-    style.navButton.color = dark ? style.colors.light : style.colors.white;
 
     return style;
 };

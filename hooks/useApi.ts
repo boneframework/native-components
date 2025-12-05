@@ -1,19 +1,19 @@
-import {useState} from "react";
+import { useState } from "react";
 
-const useApi = (apiFunc) => {
+const useApi = (apiFunc: any) => {
     const [error, setError] = useState(false);
     const [headers, setHeaders] = useState([]);
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const request = async (...args) => {
+    const request = async (...args: any[]) => {
         setLoading(true);
         const response = await apiFunc(...args)
-            .then(result => {
+            .then((result: any) => {
                 setError(!result.ok);
 
                 return result;
-            }, reason => {
+            }, (reason: any) => {
                 setError(true);
 
                 return {headers: [], data: reason};
