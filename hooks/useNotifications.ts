@@ -7,7 +7,7 @@ import Constants from "expo-constants";
 import expoPushTokensApi from "../api/notifications";
 import {useStorageState} from "./useStorageState";
 
-export default useNotifications = (notificationReceivedListener = notification => {}) => {
+const useNotifications = (notificationReceivedListener = notification => {}) => {
     const [[isPushTokenLoading, pushToken], setPushToken] = useStorageState('pushToken');
 
     useEffect(() => {
@@ -65,3 +65,5 @@ export default useNotifications = (notificationReceivedListener = notification =
         }
     };
 }
+
+export default useNotifications;

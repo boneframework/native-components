@@ -1,10 +1,10 @@
-import {create} from 'apisauce';
+import {ApisauceInstance, create} from 'apisauce';
 
 import cache from '../utilities/cache';
 import settings from '../../../../config/settings';
 import cacheSettings from '../../../../config/cache';
 
-const apiClient = create({
+const apiClient: ApisauceInstance  = create({
     baseURL: settings.apiUrl
 });
 

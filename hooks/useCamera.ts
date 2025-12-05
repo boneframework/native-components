@@ -1,8 +1,9 @@
 import {useEffect} from "react";
 import { Camera } from 'expo-camera';
 import * as ImagePicker from "expo-image-picker";
+import {Alert} from "react-native";
 
-export default useCamera = () => {
+const useCamera = () => {
 
     const requestPermission = async () => {
         const { granted } = await Camera.requestCameraPermissionsAsync();
@@ -27,3 +28,5 @@ export default useCamera = () => {
 
     return {takePhoto};
 };
+
+export default useCamera;
