@@ -1,6 +1,5 @@
 import * as SecureStore from 'expo-secure-store';
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import jwtDecode from 'jwt-decode';
 
 const userKey = 'user';
 const tokenKey = 'authToken';
@@ -17,19 +16,19 @@ const storeAuthToken = async token => {
     await storeSecure(tokenKey, token, 'error storing the auth token');
 };
 
-const getAuthToken = async () => {
+const getAuthToken = async (): Promise<any> => {
     return await fetchSecure(tokenKey);
 };
 
-const removeAuthToken = () => {
+const removeAuthToken: () => void = (): void => {
     removeSecure(tokenKey);
 }
 
-const removeUser = () => {
+const removeUser: () => void = (): void => {
     remove(userKey);
 }
 
-const removeSecure = async key => {
+const removeSecure : (key: string) => Promise<void> = async (key: string): Promise<void> => {
     try {
         await SecureStore.deleteItemAsync(key);
     } catch (error) {
@@ -37,7 +36,7 @@ const removeSecure = async key => {
     }
 }
 
-const storeSecure = async (key, value, errorMessage = 'error storing value') => {
+const storeSecure = async (key: string, value, errorMessage = 'error storing value') => {
     try {
         await SecureStore.setItemAsync(key, JSON.stringify(value));
     } catch (error) {
@@ -45,7 +44,7 @@ const storeSecure = async (key, value, errorMessage = 'error storing value') => 
     }
 }
 
-const fetchSecure = async key => {
+const fetchSecure = async (key: string): Promise<any> => {
     try {
         return JSON.parse(await SecureStore.getItemAsync(key));
     } catch (error) {
@@ -53,7 +52,7 @@ const fetchSecure = async key => {
     }
 }
 
-const store = async (key, value, errorMessage = 'error storing value') => {
+const store = async (key: string, value: any, errorMessage: string = 'error storing value'): Promise<void> => {
     try {
         await AsyncStorage.setItem(key, JSON.stringify(value));
     } catch (error) {
@@ -61,7 +60,7 @@ const store = async (key, value, errorMessage = 'error storing value') => {
     }
 }
 
-const fetch = async key => {
+const fetch: (key: string) => Promise<any> = async (key: string): Promise<any> => {
     try {
         return JSON.parse(await AsyncStorage.getItem(key));
     } catch (error) {
@@ -69,7 +68,7 @@ const fetch = async key => {
     }
 }
 
-const remove = async key => {
+const remove: (key: string) => Promise<void> = async (key: string): Promise<void> => {
     try {
         await AsyncStorage.removeItem(key);
     } catch (error) {

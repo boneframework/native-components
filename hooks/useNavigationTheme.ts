@@ -3,7 +3,7 @@ import {DarkTheme, DefaultTheme} from "@react-navigation/native";
 import useStyle from "./useStyle";
 import colors from "../../../../config/colors";
 
-export default useNavigationTheme = () => {
+const useNavigationTheme = () => {
     const style = useStyle();
     const theme = style.dark ? DarkTheme : DefaultTheme
     return {
@@ -17,3 +17,5 @@ export default useNavigationTheme = () => {
         dark: style.dark
     }
 };
+
+export default useNavigationTheme;

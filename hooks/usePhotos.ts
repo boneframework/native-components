@@ -1,10 +1,11 @@
 import {useEffect} from "react";
 import * as ImagePicker from "expo-image-picker";
+import {Alert} from "react-native";
 
-export default usePhotos = () => {
+const usePhotos = () => {
 
     const requestPermission = async () => {
-        const { granted} = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
         if (!granted) {
             Alert.alert(
@@ -26,3 +27,5 @@ export default usePhotos = () => {
 
     return {selectImage};
 };
+
+export default usePhotos;

@@ -4,7 +4,7 @@ import {Platform, useColorScheme} from "react-native";
 import colors from "../../../../config/colors";
 import logger from "../utilities/logger";
 
-export default useStyle = () => {
+const useStyle = () => {
     const colorScheme = useColorScheme();
     const [mode, setMode] = useState();
     const dark = colorScheme == 'dark'
@@ -42,3 +42,5 @@ export default useStyle = () => {
 
     return style;
 };
+
+export default useStyle;
