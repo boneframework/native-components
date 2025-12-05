@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { Platform, useColorScheme } from "react-native";
 
-import colors from "../../../../config/colors";
+import useColors from "./useColors";
 
 const useStyle = () => {
     const colorScheme = useColorScheme();
     const [mode, setMode] = useState();
-    const dark = colorScheme == 'dark'
+    const dark = colorScheme == 'dark';
+    const colors = useColors();
+    console.log(colors);
+    console.log('xxxxxxx');
+    
     const style = {
         dark: dark,
         text: {
