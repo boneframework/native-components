@@ -1,11 +1,9 @@
-import { useState } from "react";
+import useColors from "@boneframework/native-components/hooks/useColors";
 import { Platform, useColorScheme } from "react-native";
 
-import useColors from "./useColors";
 
 const useStyle = () => {
     const colorScheme = useColorScheme();
-    const [mode, setMode] = useState();
     const dark = colorScheme == 'dark';
     const colors = useColors();
     

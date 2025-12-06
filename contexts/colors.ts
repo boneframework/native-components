@@ -3,7 +3,7 @@ import { createContext } from "react";
 
 const ColorContext = createContext<ThemeColors>(defaultTheme);
 
-type ColorsProviderProps = {
+export type ColorsProviderProps = {
     children: React.ReactNode;
     value: ThemeColors;
 };
