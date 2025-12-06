@@ -1,6 +1,6 @@
 {
   "name": "@boneframework/native-components",
-  "version": "1.0.49",
+  "version": "1.0.50",
   "description": "Expo React Native Components for Bone Framework",
   "main": "src/Bone.ts",
   "scripts": {
@@ -36,7 +36,7 @@
     "dayjs": "^1.11.13",
     "expo-auth-session": "^6.0.0",
     "expo-camera": "^17.0.10",
-    "expo-constants": "^19.1.0",
+    "expo-constants": "^18.0.11",
     "expo-device": "^7.0.1",
     "expo-image": "^3.0.11",
     "expo-image-picker": "^17.0.9",
