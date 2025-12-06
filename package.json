@@ -1,6 +1,6 @@
 {
   "name": "@boneframework/native-components",
-  "version": "1.0.52",
+  "version": "1.0.53",
   "description": "Expo React Native Components for Bone Framework",
   "main": "src/Bone.ts",
   "scripts": {
@@ -29,11 +29,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@react-native-async-storage/async-storage": "^2.0.0",
+    "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-native-community/datetimepicker": "^8.5.1",
     "@react-native-community/netinfo": "^11.4.1",
-    "apisauce": "^3.1.0",
-    "dayjs": "^1.11.13",
+    "apisauce": "^3.2.2",
+    "dayjs": "^1.11.19",
     "expo-auth-session": "^7.0.10",
     "expo-camera": "^17.0.10",
     "expo-constants": "^18.0.11",
@@ -44,15 +44,15 @@
     "expo-location": "^19.0.8",
     "expo-notifications": "^0.32.14",
     "expo-router": "^6.0.17",
-    "expo-secure-store": "^14.0.0",
-    "formik": "^2.4.6",
+    "expo-secure-store": "^15.0.8",
+    "formik": "^2.4.9",
     "jwt-decode": "^4.0.0",
     "lottie-react-native": "^7.3.4",
     "react": "19.1.0",
-    "react-native-gesture-handler": "^2.21.0",
-    "react-native-maps": "^1.20.0",
+    "react-native-gesture-handler": "^2.29.1",
+    "react-native-maps": "^1.26.19",
     "react-native-progress": "^5.0.1",
     "toggle-switch-react-native": "^3.3.0",
-    "yup": "^1.4.0"
+    "yup": "^1.7.1"
   }
 }
