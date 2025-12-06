@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
-import AuthContext from "@boneframework/native-components/contexts/auth";
-import {useSecureStorageState} from "@boneframework/native-components/hooks/useSecureStorageState";
-import {useStorageState} from "@boneframework/native-components/hooks/useStorageState";
-import authStorage from "@boneframework/native-components/utilities/authStorage";
-import useApi from "@boneframework/native-components/hooks/useApi";
 import usersApi from "@boneframework/native-components/api/users";
+import AuthContext from "@boneframework/native-components/contexts/auth";
+import useApi from "@boneframework/native-components/hooks/useApi";
+import { useSecureStorageState } from "@boneframework/native-components/hooks/useSecureStorageState";
+import { useStorageState } from "@boneframework/native-components/hooks/useStorageState";
+import authStorage from "@boneframework/native-components/utilities/authStorage";
 
 function SessionProvider(props: object) {
     const profileApi = useApi(usersApi.getProfile);

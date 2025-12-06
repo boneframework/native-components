@@ -8,8 +8,6 @@ const useStyle = () => {
     const [mode, setMode] = useState();
     const dark = colorScheme == 'dark';
     const colors = useColors();
-    console.log(colors);
-    console.log('xxxxxxx');
     
     const style = {
         dark: dark,
