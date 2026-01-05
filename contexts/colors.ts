@@ -1,4 +1,4 @@
-import { ThemeColors, defaultTheme } from "@boneframework/native-components/contexts/theme";
+import { ThemeColors, defaultTheme } from "../contexts/theme";
 import { createContext } from "react";
 
 const ColorContext = createContext<ThemeColors>(defaultTheme);
@@ -8,4 +8,4 @@ export type ColorsProviderProps = {
     value: ThemeColors;
 };
 
-export default ColorContext; 
+export default ColorContext;

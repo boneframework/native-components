@@ -1,10 +1,14 @@
-import ColorContext from "@boneframework/native-components/contexts/colors";
-import { defaultTheme, ThemeColors } from "@boneframework/native-components/contexts/theme";
+import { defaultTheme, ThemeColors } from "../contexts/theme";
+import {useContext} from "react";
+import ColorContext from "../contexts/colors";
 
-const ColorProvider = ({value, children}: {value?: ThemeColors; children: React.ReactNode}) => {
-  return <ColorContext value={value ?? defaultTheme}>
+const ColorProvider = ({colors, children}: {colors?: ThemeColors; children: React.ReactNode}) => {
+   const colorContext: ThemeColors = useContext(ColorContext);
+   colorContext.colors = colors.colors;
+
+    return <>
             {children}
-        </ColorContext>; 
+        </>;
 };
 
-export default ColorProvider; 
+export default ColorProvider;

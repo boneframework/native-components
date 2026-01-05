@@ -1,11 +1,10 @@
 
-// import { useContext } from "react";
-import colors from "../../../../config/colors";
-// import ColorContext from "@boneframework/native-components/contexts/colors";
+import { useContext } from "react";
+import ColorContext from "../contexts/colors";
+import {ThemeColors} from "../contexts/theme";
 
-const useColors = () => {
-    // return useContext(ColorContext);
-    return colors
+const useColors = (): ThemeColors => {
+    return useContext(ColorContext);
 }
 
 export default useColors;
