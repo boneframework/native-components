@@ -3,9 +3,11 @@ import {Modal, StyleSheet, View} from "react-native";
 import * as Progress from 'react-native-progress';
 
 import Animation from "../components/Animation";
-import colors from '../../../../config/colors';
+import useColors from "../hooks/useColors";
 
 function UploadScreen({onDone, progress = 0, visible = false, animationSource = '../../../../assets/animations/done.json'}) {
+    const colors = useColors();
+
     return (
         <Modal visible={visible}>
             <View style={styles.container}>

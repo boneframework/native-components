@@ -1,22 +1,24 @@
 import {Context, createContext} from 'react';
 
 type ThemeColors = {
-    colors: {
-        primary: string;
-        secondary: string;
-        black: string;
-        white: string;
-        light: string;
-        whitish: string;
-        medium: string;
-        darkish: string;
-        dark: string;
-        danger: string;
-        bgGradient: string[];
-    }
+    primary: string;
+    secondary: string;
+    black: string;
+    white: string;
+    light: string;
+    whitish: string;
+    medium: string;
+    darkish: string;
+    dark: string;
+    danger: string;
+    bgGradient: string[];
 };
 
-const defaultTheme: ThemeColors = {
+type ThemeColorsProp = {
+    colors: ThemeColors
+};
+
+const defaultTheme: ThemeColorsProp = {
     colors: {
         primary: '#fc5c65',
         secondary: '#4ecdc4',
