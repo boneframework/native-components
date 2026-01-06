@@ -7,14 +7,14 @@ import Animation from "./Animation";
 interface ActivityIndicatorProps {
     visible?: boolean;
     type?: 'default' | 'overlay';
-    animationSource: string | undefined;
+    animationSource?: string | undefined;
 }
 
 function ActivityIndicator({ visible = false , type ="default", animationSource}: ActivityIndicatorProps) {
     const defaultStyles = useStyle();
 
     if (!animationSource) {
-        animationSource = require('../../../../assets/animations/loader.json');
+        animationSource = require('../assets/animations/loader.json');
     }
 
     const styles = StyleSheet.create({

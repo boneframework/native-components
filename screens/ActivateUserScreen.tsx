@@ -11,7 +11,7 @@ import useApi from "../hooks/useApi";
 import useAuth from "../hooks/useAuth";
 
 import userApi from "../api/users";
-import colors from '../../../../config/colors';
+import useColors from "@boneframework/native-components/hooks/useColors";
 
 function ActivateUserScreen({settings, loginRedirect, resendActivationEmailRedirect, backgroundSource = null}) {
     const STATUS_BEGIN = 'start_validating';
@@ -31,6 +31,8 @@ function ActivateUserScreen({settings, loginRedirect, resendActivationEmailRedir
     const params = useGlobalSearchParams();
     const email = params.email;
     const token = params.token;
+
+    const colors = useColors();
 
     const validateEmailToken = async () => {
         setStatus(STATUS_VALIDATE);

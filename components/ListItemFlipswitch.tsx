@@ -5,7 +5,6 @@ import Image from "./Image";
 import {MaterialCommunityIcons} from "@expo/vector-icons";
 
 import Text from '../components/Text'
-import colors from '../../../../config/colors';
 import useStyle from "../hooks/useStyle";
 
 function ListItemFlipswitch({title, subtitle, IconComponent, isOn, onColor, offColor, onToggle = () => {}}) {
@@ -32,7 +31,7 @@ function ListItemFlipswitch({title, subtitle, IconComponent, isOn, onColor, offC
             fontWeight: "500",
         },
         subtitle: {
-            color: colors.medium
+            color: style.colors.medium
         }
     });
 

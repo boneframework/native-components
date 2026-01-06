@@ -20,8 +20,7 @@ import useAuth from "../hooks/useAuth";
 import useCamera from "../hooks/useCamera";
 import usePhotos from "../hooks/usePhotos";
 import useStyle from "../hooks/useStyle";
-
-import colors from '../../../../config/colors';
+import useColors from '@boneframework/native-components/hooks/useColors';
 
 const validationSchema = Yup.object().shape({
     firstname: Yup.string().required().min(2).max(60).label('First name'),
@@ -39,7 +38,7 @@ function EditProfileScreen(props) {
     const [profileImage, setProfileImage] = useState(null);
     const [profileBackground, setProfileBackground] = useState(null);
     const style = useStyle();
-
+    const colors = useColors();
     const { updateUser, user} = useAuth();
     const updateProfileApi = useApi(userApi.updateProfile);
     const userImageUploadApi = useApi(userApi.uploadUserImage);

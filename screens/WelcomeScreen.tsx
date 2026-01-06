@@ -5,8 +5,7 @@ import {Image, StyleSheet, Text, View} from "react-native";
 import ActivityIndicator from "../components/ActivityIndicator";
 import Background from '../components/Background';
 import Button from '../components/Button';
-
-import colors from '../../../../config/colors';
+import useColors from "@boneframework/native-components/hooks/useColors";
 
 function WelcomeScreen({
     loginOnPress = () => {},
@@ -16,8 +15,10 @@ function WelcomeScreen({
     logoTopMargin = 70,
     logoWidth = 150,
     logoHeight = 105,
-    backgroundSource = null
+    backgroundSource = null,
+    logoSource = null,
 }) {
+    const colors = useColors();
     const styles = StyleSheet.create({
         background: {
             flex: 1,
@@ -46,11 +47,19 @@ function WelcomeScreen({
         },
     });
 
+    if (!backgroundSource) {
+        backgroundSource = require('../assets/background.png');
+    }
+
+    if (!logoSource) {
+        logoSource = require('../assets/logo.png');
+    }
+
     return (
         <Background imageSource={backgroundSource} blurRadius={10} style={styles.background} gradientColors={colors.bgGradient}>
             <ActivityIndicator visible={isLoading} type={'overlay'} />
             <View style={styles.logoContainer}>
-                <Image style={styles.logo} source={require('../../../../assets/logo.png')} />
+                <Image style={styles.logo} source={require(logoSource)} />
                 <Text style={styles.tagline}>{ title }</Text>
             </View>
             <View style={styles.buttonContainer}>

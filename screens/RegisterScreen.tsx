@@ -9,17 +9,17 @@ import useApi from "../hooks/useApi";
 import usersApi from '../api/users';
 import {ErrorMessage, FormField, Form, SubmitButton} from '../components/forms'
 import Icon from "../components/Icon";
-
-import colors from "../../../../config/colors";
+import useColors from '@boneframework/native-components/hooks/useColors';
 
 const validationSchema = Yup.object().shape({
     email: Yup.string().required().email().label('Email'),
 });
 
-function RegisterScreen({postRegisterUrl, backgroundSource = null}) {
+function RegisterScreen({postRegisterUrl, backgroundSource = null, logoSource = null}) {
     const registerApi = useApi(usersApi.register);
     const [error, setError] = useState();
     const onClose = () => router.back();
+    const colors = useColors();
 
     const handleSubmit = async userInfo => {
         Keyboard.dismiss();
@@ -39,6 +39,10 @@ function RegisterScreen({postRegisterUrl, backgroundSource = null}) {
         router.navigate(postRegisterUrl);
     };
 
+    if (!logoSource) {
+        logoSource = require('../assets/logo.png');
+    }
+
     return (
         <>
         <ActivityIndicator visible={registerApi.loading} type={'overlay'}/>
@@ -47,7 +51,7 @@ function RegisterScreen({postRegisterUrl, backgroundSource = null}) {
                 <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
                     <Icon size={75} name={'chevron-left'} />
                 </TouchableOpacity>
-                <Image style={styles.logo} source={require('../../../../assets/logo.png')} />
+                <Image style={styles.logo} source={require(logoSource)} />
 
                 <Form
                     initialValues={{ email: ''}}

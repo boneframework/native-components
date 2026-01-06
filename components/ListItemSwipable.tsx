@@ -4,11 +4,12 @@ import Swipeable from 'react-native-gesture-handler/Swipeable';
 
 import Image from '../components/Image'
 import Text from '../components/Text'
-import colors from '../../../../config/colors'
 import {MaterialCommunityIcons} from "@expo/vector-icons";
 import useStyle from "../hooks/useStyle";
+import useColors from '@boneframework/native-components/hooks/useColors';
 
 function ListItemSwipable({title, subtitle, image, IconComponent, onPress, renderRightActions, displayCheverons, titleStyle, subtitleStyle}) {
+    const colors = useColors();
     const style = useStyle();
 
     if (!title && subtitle) {

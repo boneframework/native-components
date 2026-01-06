@@ -10,11 +10,15 @@ const validationSchema = Yup.object().shape({
     confirm: Yup.string().required().oneOf([Yup.ref('password'), null], 'Passwords must match').label('Confirm')
 });
 
-function SetPasswordScreen({submitCallback, error}) {
+function SetPasswordScreen({submitCallback, error, logosource}) {
+    if (!logosource) {
+        logosource = require('../assets/logo.png');
+    }
+
 
     return(
         <View style={styles.container}>
-            <Image style={styles.logo} source={require('../../../../assets/logo.png')} />
+            <Image style={styles.logo} source={logosource} />
             <Form
                 initialValues={{ password: '', confirm: ''}}
                 onSubmit={submitCallback}

@@ -37,5 +37,5 @@ const defaultTheme: ThemeColorsProp = {
 const ThemeContext: Context<ThemeColors> = createContext<ThemeColors>(defaultTheme);
 
 export default ThemeContext;
-export { defaultTheme, ThemeColors };
+export { defaultTheme, ThemeColors, ThemeColorsProp };
 
