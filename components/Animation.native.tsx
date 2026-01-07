@@ -1,14 +1,14 @@
 import React, {useRef} from 'react';
-import { DotLottie } from '@lottiefiles/dotlottie-react-native';
-
+// import { DotLottie } from '@lottiefiles/dotlottie-react-native';
+import LottieView from "lottie-react-native";
 
 function Animation({source, style  = {}, onAnimationFinish = () => {}, autoPlay = true, loop = true, speed = 1.5}) {
     
-    const lottieRef = useRef<DotLottie>(null);
+    const lottieRef = useRef(null);
 
 
     return(
-        <DotLottie
+        <LottieView
             source={source}
             autoPlay={autoPlay}
             loop={loop}
