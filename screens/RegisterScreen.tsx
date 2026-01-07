@@ -51,7 +51,7 @@ function RegisterScreen({postRegisterUrl, backgroundSource = null, logoSource = 
                 <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
                     <Icon size={75} name={'chevron-left'} />
                 </TouchableOpacity>
-                <Image style={styles.logo} source={require(logoSource)} />
+                <Image style={styles.logo} source={logoSource} />
 
                 <Form
                     initialValues={{ email: ''}}
