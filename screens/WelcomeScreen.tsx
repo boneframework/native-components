@@ -59,7 +59,7 @@ function WelcomeScreen({
         <Background imageSource={backgroundSource} blurRadius={10} style={styles.background} gradientColors={colors.bgGradient}>
             <ActivityIndicator visible={isLoading} type={'overlay'} />
             <View style={styles.logoContainer}>
-                <Image style={styles.logo} source={require(logoSource)} />
+                <Image style={styles.logo} source={logoSource} />
                 <Text style={styles.tagline}>{ title }</Text>
             </View>
             <View style={styles.buttonContainer}>
