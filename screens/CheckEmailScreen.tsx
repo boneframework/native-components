@@ -4,10 +4,43 @@ import React from "react";
 import Animation from "../components/Animation";
 import Background from "../components/Background";
 import Text from '../components/Text';
+import useColors from "@boneframework/native-components/hooks/useColors";
 
-import colors from "../../../../config/colors";
 
 function CheckEmailScreen({backgroundSource = null}) {
+
+    const colors = useColors();
+
+    const styles = StyleSheet.create({
+        container: {
+            flex: 1,
+            paddingHorizontal: 20
+        },
+        animationContainer: {
+            alignItems: 'center',
+            justifyContent: 'center',
+            flex: 1,
+            paddingHorizontal: 10,
+            marginTop: -50
+        },
+        animation: {
+            width: 150,
+            height: 150,
+        },
+        activate: {
+            marginTop: 20,
+            textTransform: 'uppercase',
+            fontSize: 24,
+            fontWeight: 'bold',
+            marginBottom: 20,
+            color: colors.white,
+            textAlign: 'center'
+        },
+        info: {
+            color: colors.white,
+            textAlign: 'center'
+        },
+    })
 
     return (
         <Background blurRadius={10} style={styles.container} imageSource={backgroundSource} gradientColors={colors.bgGradient} >
@@ -15,7 +48,7 @@ function CheckEmailScreen({backgroundSource = null}) {
                 <Animation
                     autoPlay={true}
                     loop={true}
-                    source={require('../../../../assets/animations/email.json')}
+                    source={require('../assets/animations/email.json')}
                     style={styles.animation}
                     speed={1}
                 />
@@ -26,35 +59,6 @@ function CheckEmailScreen({backgroundSource = null}) {
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingHorizontal: 20
-    },
-    animationContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        flex: 1,
-        paddingHorizontal: 10,
-        marginTop: -50
-    },
-    animation: {
-        width: 150,
-        height: 150,
-    },
-    activate: {
-        marginTop: 20,
-        textTransform: 'uppercase',
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 20,
-        color: colors.white,
-        textAlign: 'center'
-    },
-    info: {
-        color: colors.white,
-        textAlign: 'center'
-    },
-})
+
 
 export default CheckEmailScreen;

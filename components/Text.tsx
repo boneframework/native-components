@@ -1,10 +1,10 @@
+import useStyle from '@boneframework/native-components/hooks/useStyle';
 import React from 'react';
-import {Text as NativeText, StyleSheet} from "react-native";
-
-import defaultStyles from '../../../../config/styles'
-import colors from "../../../../config/colors";
+import {Text as NativeText} from "react-native";
 
 function Text({children, style, ...otherProps}) {
+    const defaultStyles = useStyle();
+
     return (
         <NativeText style={[defaultStyles.text, style]} {...otherProps} >
             {children}

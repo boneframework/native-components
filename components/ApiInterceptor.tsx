@@ -2,11 +2,11 @@ import React, {useEffect} from 'react';
 
 import apiClient from "../api/client";
 import authStorage from "../utilities/authStorage";
-import settings from "../../../../config/settings";
 import useAuth from '../hooks/useAuth';
+import useSettings from '@boneframework/native-components/hooks/useSettings';
 
 // call to refresh an access token using our refresh token
-const refreshToken = async (token) => {
+const refreshToken = async (token, settings) => {
     const formData = new FormData();
     formData.append('client_id', settings.clientId);
     formData.append('grant_type', 'refresh_token');
@@ -30,6 +30,7 @@ const refreshToken = async (token) => {
 
 function ApiInterceptor(props) {
     const {user, logout} = useAuth();
+    const settings = useSettings
     let refreshing = null;
 
     const addTransformers = () => {
@@ -74,7 +75,7 @@ function ApiInterceptor(props) {
                             if (token) {
                                 // first request to refresh will call the method, all the other requests will await the promise
                                 // so only one call to refresh will be made in the case of multile async 401s
-                                refreshing = refreshing ? refreshing : refreshToken(token.refreshToken);
+                                refreshing = refreshing ? refreshing : refreshToken(token.refreshToken, settings);
                                 await refreshing;
                                 refreshing = null;
 

@@ -1,17 +1,18 @@
 import React, {useEffect} from 'react';
 import {Alert, Image, StyleSheet, TouchableWithoutFeedback, View} from "react-native";
 
-import colors from '../../../../config/colors'
 import Icon from './Icon';
 import useCamera from '../hooks/useCamera';
 import usePhotos from '../hooks/usePhotos';
 import useStyle from "../hooks/useStyle";
+import useColors from '@boneframework/native-components/hooks/useColors';
 
 function ImageInput({imageUri, onChangeImage, onCancel = () => {}, mode = 'both'}) {
 
     const camera = useCamera();
     const photos = usePhotos();
     const style = useStyle();
+    const colors = useColors();
 
     const styles = StyleSheet.create({
         container: {

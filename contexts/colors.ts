@@ -1,7 +1,7 @@
 import { ThemeColors, defaultTheme } from "../contexts/theme";
 import { createContext } from "react";
 
-const ColorContext = createContext<ThemeColors>(defaultTheme);
+const ColorContext = createContext<ThemeColors>(defaultTheme.colors);
 
 export type ColorsProviderProps = {
     children: React.ReactNode;

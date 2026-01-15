@@ -1,11 +1,11 @@
 import {ApisauceInstance, create} from 'apisauce';
 
 import cache from '../utilities/cache';
-import settings from '../../../../config/settings';
-import cacheSettings from '../../../../config/cache';
+
+// import cacheSettings from '../../../../config/cache';
 
 const apiClient: ApisauceInstance  = create({
-    baseURL: settings.apiUrl
+    baseURL: process.env.EXPO_PUBLIC_API_URL
 });
 
 const get = apiClient.get;
@@ -14,9 +14,10 @@ apiClient.get = async (url, params, axiosConfig) => {
     const response = await get(url, params, axiosConfig);
 
     if (response.ok) {
-        if (cacheSettings.blacklist.includes(url) === false) {
-            cache.store(url, response.data);
-        }
+        // @todo re-enable caching later
+        // if (cacheSettings.blacklist.includes(url) === false) {
+        //     cache.store(url, response.data);
+        // }
 
         return response;
     }

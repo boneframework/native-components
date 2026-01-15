@@ -1,6 +1,6 @@
 {
   "name": "@boneframework/native-components",
-  "version": "1.0.56",
+  "version": "1.0.57",
   "description": "Expo React Native Components for Bone Framework",
   "main": "src/Bone.ts",
   "scripts": {
@@ -29,6 +29,8 @@
     "access": "public"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.13.5",
+    "@lottiefiles/dotlottie-react-native": "^0.7.1",
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-native-community/datetimepicker": "^8.5.1",
     "@react-native-community/netinfo": "^11.4.1",
@@ -48,7 +50,8 @@
     "formik": "^2.4.9",
     "jwt-decode": "^4.0.0",
     "lottie-react-native": "^7.3.4",
-    "react": "^19.1.0",
+    "pigeon-maps": "^0.22.1",
+    "react": "19.1.0",
     "react-native-gesture-handler": "^2.29.1",
     "react-native-maps": "^1.26.19",
     "react-native-progress": "^5.0.1",
