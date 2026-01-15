@@ -11,7 +11,6 @@ import useColors from "../hooks/useColors";
 function ListItemSwipable({title, subtitle, image, IconComponent, onPress, renderRightActions, displayCheverons, titleStyle, subtitleStyle}) {
     const colors = useColors();
     const style = useStyle();
-    const colors = useColors();
 
     if (!title && subtitle) {
         title = subtitle;
