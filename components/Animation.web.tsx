@@ -3,17 +3,18 @@ import Lottie  from 'lottie-react';
 
 function Animation({source, style  = {}, onAnimationFinish = () => {}, autoPlay = true, loop = true, speed = 1.5}) {
 
-    const lottieRef = useRef<Lottie>(null);
+    const lottieRef = useRef(null);
 
     return(
         <Lottie
-            source={source}
+            animationData={source}
             autoPlay={autoPlay}
             loop={loop}
             style={style}
             speed={speed}
-            onAnimationFinish={onAnimationFinish}
-            ref={lottieRef}
+            onComplete={onAnimationFinish}
+            lottieRef={lottieRef}
+            onDOMLoaded={() => lottieRef.current?.setSpeed(speed)}
         />
     );
 }
