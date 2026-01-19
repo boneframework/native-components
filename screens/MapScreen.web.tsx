@@ -8,14 +8,20 @@ function MapScreen(props) {
 
   return (
     <View style={styles.container}>
-        <Map style={styles.map}
+        <Map 
+        defaultCenter={center}
+        defaultZoom={center}
+        defaultHeight={styles.map.height}
+        defaultWidth={styles.map.width}
         center={center} 
         zoom={zoom} 
         onBoundsChanged={({ center, zoom }) => { 
             setCenter(center) 
             setZoom(zoom) 
         }} 
-        />
+        >
+            {props.children}
+        </Map>
     </View>
   )
 }

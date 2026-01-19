@@ -1,14 +1,6 @@
 import React from 'react';
-import {StyleSheet, Text, View} from "react-native";
-import MapView from "react-native-maps";
-
-function MapScreen(props) {
-    return (
-        <View style={styles.container}>
-            <MapView style={styles.map} />
-        </View>
-    );
-}
+import { AppleMaps, GoogleMaps } from 'expo-maps';
+import {Platform, StyleSheet, Text, View} from "react-native";
 
 const styles = StyleSheet.create({
     container: {
@@ -19,5 +11,19 @@ const styles = StyleSheet.create({
         height: '100%',
     },
 });
+
+function MapScreen(props) {
+
+    const children = props.children;
+
+    if (Platform.OS === 'ios') 
+        return <View style={styles.container}><AppleMaps.View style={styles.map} {...props} >{children}</AppleMaps.View></View>;
+    } 
+    
+    if (Platform.OS === 'android') {
+        return <View style={styles.container}><GoogleMaps.View style={styles.map} {...props} >{children}</GoogleMaps.View></View>;
+    }
+}
+
 
 export default MapScreen;
