@@ -16,7 +16,7 @@ function MapScreen(props) {
 
     const children = props.children;
 
-    if (Platform.OS === 'ios') 
+    if (Platform.OS === 'ios') {
         return <View style={styles.container}><AppleMaps.View style={styles.map} {...props} >{children}</AppleMaps.View></View>;
     } 
     
