@@ -1,6 +1,6 @@
 {
   "name": "@boneframework/native-components",
-  "version": "1.0.62",
+  "version": "1.0.63",
   "description": "Expo React Native Components for Bone Framework",
   "main": "src/Bone.ts",
   "scripts": {

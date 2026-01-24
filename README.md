@@ -1,16 +1,4 @@
 # @boneframework/native-components
 React Native expo components for BoneFramework
-## project level files referred to in code
-```
-config/settings
-config/cache
-assets/background.png
-assets/logo.png
-assets/animations/loader.json
-```
-## install these at root level:
-```
-expo-auth-session
-```
 
-
+See @boneframework/bone-native for the Expo app
