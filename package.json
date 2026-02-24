@@ -1,6 +1,6 @@
 {
   "name": "@boneframework/native-components",
-  "version": "1.0.65",
+  "version": "1.0.67",
   "description": "Expo React Native Components for Bone Framework",
   "main": "src/Bone.ts",
   "scripts": {
@@ -51,8 +51,8 @@
     "lottie-react": "^2.4.1",
     "lottie-react-native": "^7.3.4",
     "pigeon-maps": "^0.22.1",
-    "react": "19.2.0",
-    "react-native": "^0.83.2",
+    "react": "19.1.0",
+    "react-native": "^0.1.5",
     "react-native-gesture-handler": "^2.29.1",
     "react-native-progress": "^5.0.1",
     "toggle-switch-react-native": "^3.3.0",
