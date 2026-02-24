@@ -9,7 +9,7 @@ import useApi from "../hooks/useApi";
 import usersApi from '../api/users';
 import {ErrorMessage, FormField, Form, SubmitButton} from '../components/forms'
 import Icon from "../components/Icon";
-import useColors from '@boneframework/native-components/hooks/useColors';
+import useColors from '../hooks/useColors';
 
 const validationSchema = Yup.object().shape({
     email: Yup.string().required().email().label('Email'),
