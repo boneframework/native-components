@@ -17,7 +17,7 @@ const validationSchema = Yup.object().shape({
 
 function RegisterScreen({postRegisterUrl, backgroundSource = null, logoSource = null}) {
     const registerApi = useApi(usersApi.register);
-    const [error, setError] = useState();
+    const [error, setError] = useState<string|null>();
     const onClose = () => router.back();
     const colors = useColors();
 
@@ -27,7 +27,7 @@ function RegisterScreen({postRegisterUrl, backgroundSource = null, logoSource = 
 
         if (!result.ok) {
             if (result.data) {
-                setError(result.data.error);
+                setError(result.data.reason_phrase);
             } else {
                 setError('An unexpected error occured');
                 console.error(result);
