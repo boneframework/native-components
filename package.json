@@ -1,6 +1,6 @@
 {
   "name": "@boneframework/native-components",
-  "version": "1.0.69",
+  "version": "1.0.70",
   "description": "Expo React Native Components for Bone Framework",
   "main": "src/Bone.ts",
   "scripts": {
@@ -43,7 +43,7 @@
     "expo-linear-gradient": "^15.0.8",
     "expo-location": "^19.0.8",
     "expo-maps": "^0.12.10",
-    "expo-notifications": "^54.0.3",
+    "expo-notifications": "^0.32.16",
     "expo-router": "^6.0.23",
     "expo-secure-store": "^15.0.8",
     "formik": "^2.4.9",
